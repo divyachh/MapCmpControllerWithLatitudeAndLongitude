@@ -1,0 +1,9 @@
+public class MapCmpControllerWithLatitudeAndLongitude {
+@AuraEnabled
+    public static List<Account> findAccountsForMap(){
+        return [SELECT id,name,BillingLatitude, BillingLongitude
+                FROM Account 
+                WHERE billingCountry ='USA'
+                order by LastmodifiedDate DESC Limit 10];
+    }
+}
